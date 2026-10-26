@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T06:31:54Z",
+  "title": "Design System: 热血行动",
+  "extensions": {
+    "colorMeta": {
+      "night": { "role": "neutral", "displayName": "深夜蓝" },
+      "action-red": { "role": "primary", "displayName": "活动暖红" },
+      "leaf-teal": { "role": "secondary", "displayName": "能量青绿" },
+      "warm-gold": { "role": "tertiary", "displayName": "奖励金" }
+    },
+    "typographyMeta": {
+      "body": { "displayName": "正文", "purpose": "项目规则、表单与操作说明" }
+    },
+    "shadows": [
+      { "name": "panel", "value": "0 15px 42px #020a11a3", "purpose": "移动画布的分层" }
+    ],
+    "motion": [
+      { "name": "state", "value": "background 0.2s ease, border-color 0.2s ease", "purpose": "按钮反馈" }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "390px" },
+      { "name": "staff-mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "主操作按钮",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "注册、核验、兑换等明确操作。",
+      "html": "<button class=\"ds-primary\">确认操作</button>",
+      "css": ".ds-primary{min-height:42px;padding:10px 17px;border:0;border-radius:6px;background:#b63748;color:#f6f1e8;font-weight:700;cursor:pointer}.ds-primary:hover{background:#d44857}.ds-primary:focus-visible{outline:3px solid #f3ce8b;outline-offset:3px}"
+    },
+    {
+      "name": "身份输入",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "学生、教职工注册和登录字段。",
+      "html": "<input class=\"ds-input\" placeholder=\"填写姓名\" />",
+      "css": ".ds-input{padding:11px 12px;border:1px solid #597178;border-radius:6px;background:#102533;color:#f6f1e8}.ds-input:focus-visible{outline:3px solid #73d9bf;outline-offset:2px}"
+    },
+    {
+      "name": "资源板",
+      "kind": "card",
+      "description": "展示血值或能量余额及用途。",
+      "html": "<section class=\"ds-resource\"><small>血值余额</small><strong>20</strong><span>参与竞技场时消耗</span></section>",
+      "css": ".ds-resource{display:grid;gap:7px;padding:15px;border:1px solid #864b52;border-radius:7px;background:#302633;color:#ff7480}.ds-resource strong{font-size:34px;font-variant-numeric:tabular-nums}.ds-resource span{color:#f6f1e8;font-size:12px}"
+    },
+    {
+      "name": "核验记录",
+      "kind": "card",
+      "description": "工作人员可扫描的项目处理行。",
+      "html": "<article class=\"ds-claim\"><strong>健康检测站</strong><span>待核验 · 张同学</span></article>",
+      "css": ".ds-claim{display:grid;gap:5px;padding:16px;border:1px solid #40525a;border-radius:8px;background:#202c35;color:#f1f4f0}.ds-claim span{color:#c1d0cc;font-size:12px}"
+    },
+    {
+      "name": "页面导航",
+      "kind": "nav",
+      "description": "参与者端底部五项导航。",
+      "html": "<nav class=\"ds-nav\"><button>首页</button><button aria-current=\"page\">项目</button><button>幸运轮</button></nav>",
+      "css": ".ds-nav{display:flex;gap:15px;padding:10px;background:#0c202d;border-top:1px solid #38515b}.ds-nav button{border:0;background:transparent;color:#b6cbcb}.ds-nav button[aria-current]{color:#ff7480}.ds-nav button:focus-visible{outline:3px solid #f3ce8b}"
+    }
+  ],
+  "narrative": {
+    "northStar": "校园公益活动的夜间记分界面",
+    "overview": "深色画布与暖色标记承载现场参与过程；积分和工作人员操作始终清晰可核对。",
+    "keyCharacteristics": ["克制的竞技感", "校园公益插画", "明确的积分语义", "操作留痕"],
+    "rules": [
+      { "name": "先看状态", "body": "余额、申请状态与实际结算靠近操作显示。", "section": "components" }
+    ],
+    "dos": ["用暖红标记血值与主要操作。", "在操作附近显示现场规则和时间限制。"],
+    "donts": ["不要把献血描述为冒险。", "不要用视觉隐藏代替后端权限检查。"]
+  }
+}
